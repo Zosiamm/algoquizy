@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">algoquizy</string>
+    <string name="title">algoquizy</string>
+    <string name="todo">TODO</string>
+    <string name="settings_title">Ustawienia</string>
+    <string name="settings_music">Muzyka</string>
+    <string name="switchs">Switch</string>
+    <string name="settings_sounds">Dźwięki</string>
+    <string name="choosequiz">ALGOQUIZY</string>
+    <string name="euklides">NWD, NWW</string>
+    <string name="prefixsums">sumy prefiksowe</string>
+    <string name="binarysearch">Binary Search</string>
+    <string name="forward">Dalej</string>
+    <string name="goodanswer">Dobrze!</string>
+    <string name="badanswer">Źle!</string>
+    <string name="result">Wynik:</string>
+    <string name="next">Następna</string>
+    <string name="previous">Poprzednia</string>
+    <string name="chooselanguage">Wybierz język</string>
+</resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.algoquizy">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AlgoQuizy">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingsPage"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SETTINGS" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChooseQuiz"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.CHOOSE" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChooseQuizSecond"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.CHOOSE" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChooseQuizThird"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.CHOOSE" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChooseLanguage"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.CHOOSE" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".QuestionView"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.QUESTION" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".GoodAnswer"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.QUESTION" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BadAnswer"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.QUESTION" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".QuizResults"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.QUESTION" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
