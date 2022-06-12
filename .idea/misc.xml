@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/drawable/baseline_arrow_back_18.xml" value="0.258" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/layout/activity_main2.xml" value="0.1272644927536232" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/layout/activity_settings_page.xml" value="0.1272644927536232" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/layout/fragment_bad_answer.xml" value="0.27291666666666664" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/layout/fragment_choose_language.xml" value="0.27291666666666664" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/layout/fragment_choose_quiz.xml" value="0.22" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/layout/fragment_choose_quiz_second.xml" value="0.27291666666666664" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/layout/fragment_choose_quiz_third.xml" value="0.27291666666666664" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/layout/fragment_good_answer.xml" value="0.25" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/layout/fragment_question_view.xml" value="0.27291666666666664" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/layout/fragment_quiz_results.xml" value="0.27291666666666664" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/layout/fragment_settings_page.xml" value="0.33" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/mipmap-anydpi-v26/ic_launche2r.png.xml" value="0.1" />
+        <entry key="..\:/Zosia/programowanie/Java/android/AlgoQuizy3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

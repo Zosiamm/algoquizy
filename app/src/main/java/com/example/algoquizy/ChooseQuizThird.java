@@ -1,7 +1,10 @@
 package com.example.algoquizy;
 
 import static java.lang.Math.min;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +15,7 @@ import android.widget.ImageButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
+import java.io.InputStream;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -43,62 +47,31 @@ public class ChooseQuizThird extends AppCompatActivity {
         if(!cmusic){
             mediaPlayer.stop();
         }
-        OkHttpClient client = new OkHttpClient();
-        String url = "http://10.0.2.2:3000/";
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
+        JSONObject array = null;
+        try {
+            array = new JSONObject(loadContentFromFile(ChooseQuizThird.this, "db.json"));
+        } catch (JSONException e) {
+            System.out.println("XDDDDD");
+            e.printStackTrace();
+        }
+        int count = 0;
+        try {
+            count = array.getInt("count");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        for(int i = 10; i < min(15,count); i++){
+            String idi = "q";
+            idi += String.valueOf(i);
+            int resID = getResources().getIdentifier(idi, "id", getPackageName());
+            quiz=findViewById(resID);
+            try {
+                quiz.setText(array.getJSONArray("quizzes").getJSONObject(i).getString("title"));
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String myResponse = response.body().string();
-                ChooseQuizThird.this.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            JSONObject array = new JSONObject(myResponse);
-                            int count = array.getInt("count");
-                            for(int i = 10; i < min(15,count); i++){
-                                String idi = "q";
-                                idi += String.valueOf(i);
-                                int resID = getResources().getIdentifier(idi, "id", getPackageName());
-                                quiz=findViewById(resID);
-                                String text = array.getJSONArray("quizzes").getJSONObject(i).getString("title");
-                                quiz.setText(text);
-                                quiz.setOnClickListener(this::OnClick);
-                            }
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    private void OnClick(View view) {
-                        String resourceName = view.getResources().getResourceName(view.getId());
-                        String strnumber = "";
-                        for(int i = 26; i < resourceName.length(); i++){
-                            strnumber += resourceName.charAt(i);
-                        }
-                        int number = Integer.parseInt(strnumber);
-                        int index = 0;
-                        mediaPlayer.stop();
-                        Intent i = new Intent(ChooseQuizThird.this, ChooseLanguage.class);
-                        i.putExtra("music", cmusic);
-                        i.putExtra("number", number);
-                        i.putExtra("index", index);
-                        i.putExtra("result", 0);
-                        i.putExtra("sounds", csounds);
-                        startActivity(i);
-                        finish();
-                    }
-                });
-            }
-        });
+            quiz.setOnClickListener(this::OnClick);
+        }
 
     }
     void OnClick(View view){
@@ -121,5 +94,49 @@ public class ChooseQuizThird extends AppCompatActivity {
             startActivity(it);
             finish();
         }
+        else{
+            String resourceName = view.getResources().getResourceName(view.getId());
+            String strnumber = "";
+            for(int i = 26; i < resourceName.length(); i++){
+                strnumber += resourceName.charAt(i);
+            }
+            int number = Integer.parseInt(strnumber);
+            int index = 0;
+            mediaPlayer.stop();
+            Intent i = new Intent(ChooseQuizThird.this, ChooseLanguage.class);
+            i.putExtra("music", cmusic);
+            i.putExtra("number", number);
+            i.putExtra("index", index);
+            i.putExtra("result", 0);
+            i.putExtra("sounds", csounds);
+            startActivity(i);
+            finish();
+        }
+    }
+    public static InputStream loadInputStreamFromAssetFile(Context context, String fileName){
+        AssetManager am = context.getAssets();
+        try {
+            InputStream is = am.open(fileName);
+            return is;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static String loadContentFromFile(Context context, String path){
+        String content = null;
+        try {
+            InputStream is = loadInputStreamFromAssetFile(context, path);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            content = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return content;
     }
 }

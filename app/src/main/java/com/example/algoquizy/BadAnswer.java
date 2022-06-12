@@ -1,7 +1,9 @@
 package com.example.algoquizy;
 
 //import android.content.Intent;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 //import android.view.View;
@@ -15,6 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -50,42 +53,21 @@ public class BadAnswer extends AppCompatActivity {
 
     }
     void OnClick(View view){
-        OkHttpClient client = new OkHttpClient();
-        String url = "http://10.0.2.2:3000/";
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
+        try {
+            JSONObject array = new JSONObject(loadContentFromFile(BadAnswer.this, "db.json"));
+            if(array.getJSONArray("quizzes").getJSONObject(number).getInt("count") == index){
+                mediaPlayer.stop();
+                Intent i = new Intent(BadAnswer.this, QuizResults.class);
+                i.putExtra("result", result);
+                i.putExtra("music", cmusic);
+                i.putExtra("sounds", csounds);
+                i.putExtra("count", index);
+                startActivity(i);
+                finish();
             }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String myResponse = response.body().string();
-                BadAnswer.this.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            JSONObject array = new JSONObject(myResponse);
-                            if(array.getJSONArray("quizzes").getJSONObject(number).getInt("count") == index){
-                                mediaPlayer.stop();
-                                Intent i = new Intent(BadAnswer.this, QuizResults.class);
-                                i.putExtra("result", result);
-                                i.putExtra("music", cmusic);
-                                i.putExtra("sounds", csounds);
-                                i.putExtra("count", index);
-                                startActivity(i);
-                                finish();
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-            }
-        });
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         Intent i = new Intent(BadAnswer.this, QuestionView.class);
         mediaPlayer.stop();
         i.putExtra("number", number);
@@ -95,5 +77,31 @@ public class BadAnswer extends AppCompatActivity {
         i.putExtra("music", cmusic);
         i.putExtra("sounds", csounds);
         startActivity(i);
+    }
+    public static InputStream loadInputStreamFromAssetFile(Context context, String fileName){
+        AssetManager am = context.getAssets();
+        try {
+            InputStream is = am.open(fileName);
+            return is;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static String loadContentFromFile(Context context, String path){
+        String content = null;
+        try {
+            InputStream is = loadInputStreamFromAssetFile(context, path);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            content = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return content;
     }
 }
