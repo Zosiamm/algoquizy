@@ -34,7 +34,7 @@ import okhttp3.Response;
 
 public class ChooseQuiz extends AppCompatActivity {
     ImageButton breturn;
-    Button bnext, quiz, bprevious;
+    Button bnext, quiz;
     MediaPlayer mediaPlayer;
     boolean cmusic = true, csounds;
     @Override
@@ -48,8 +48,6 @@ public class ChooseQuiz extends AppCompatActivity {
         breturn.setOnClickListener(this::OnClick);
         bnext = findViewById(R.id.next);
         bnext.setOnClickListener(this::OnClick);
-        bprevious = findViewById(R.id.previous);
-        bprevious.setOnClickListener(this::OnClick);
         mediaPlayer = MediaPlayer.create(ChooseQuiz.this, R.raw.algoquizy_thinking_music);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
@@ -100,9 +98,6 @@ public class ChooseQuiz extends AppCompatActivity {
             it.putExtra("sounds", csounds);
             startActivity(it);
             finish();
-        }
-        else if(view.getId() == bprevious.getId()){
-            return;
         }
         else{
             String resourceName = view.getResources().getResourceName(view.getId());

@@ -16,5 +16,5 @@
     <string name="result">Wynik:</string>
     <string name="next">Następna</string>
     <string name="previous">Poprzednia</string>
-    <string name="chooselanguage">Wybierz język</string>
+    <string name="chooselanguage">Wybierz język\nw którym\nbędą kody\nw quizie</string>
 </resources>

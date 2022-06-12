@@ -43,48 +43,47 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/chooselanguage"
+        android:textAlignment="center"
         android:textColor="#7FE0EF"
-        android:textSize="40sp"
+        android:textSize="45sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.147" />
+        app:layout_constraintVertical_bias="0.279" />
 
     <ImageButton
         android:id="@+id/cppButton"
-        android:layout_width="190dp"
-        android:layout_height="190dp"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
         android:backgroundTint="#002962FF"
         android:padding="0dp"
         android:src="@drawable/cpplogo"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407"
+        app:layout_constraintVertical_bias="0.845"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/pyButton"
-        android:layout_width="190dp"
-        android:layout_height="190dp"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
         android:backgroundTint="#00AEEA00"
         android:padding="0dp"
         android:src="@drawable/pylogo"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897"
+        app:layout_constraintVertical_bias="0.845"
         tools:ignore="SpeakableTextPresentCheck" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
