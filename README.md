@@ -8,3 +8,8 @@ Algoquizy is mobile app with algorithmics quizzes. It works without internet con
 <img src="https://user-images.githubusercontent.com/79708932/173285978-ecfb81cf-1bda-478b-99de-d01311b43799.png" width="80" height="40"/>
 <img src="https://user-images.githubusercontent.com/79708932/173286151-9b6470d1-b479-40ae-bfe7-1e54d26a0e4d.png" width="80" height="40"/>
 </p>
+<h2>How can you use algoquizy?</h2>
+<p>
+It's simple: download instalation file from
+<a href="https://algoquizy.vercel.app/">https://algoquizy.vercel.app/</a>
+install app and you can use it!
