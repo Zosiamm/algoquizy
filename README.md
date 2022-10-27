@@ -1,6 +1,6 @@
 <h1>ALGOQUIZY</h1>
 <h2>What is algoquizy?</h2>
-Algoquizy is mobile app with algorithmics quizzes. It work without internet connection
+Algoquizy is mobile app with algorithmics quizzes. It works without internet connection
 <h2>What I use for algoquizy?</h2>
 <p>
 <img src="https://user-images.githubusercontent.com/79708932/173285647-535e8e98-51c9-4858-9620-0de3cb4e9406.png" width = "80" height ="40"/>
